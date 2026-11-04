@@ -1,17 +1,29 @@
 package ie.atu.oop.labexam;
+import java.util.HashSet;
+import java.util.Scanner;
+import java.util.Set;
 
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+
 public class Main {
     public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+        String studentName;
+        int numberOfStudents;
+        WORKSHOP workshop1= new WORKSHOP("ROBOTICS",3);
+        System.out.print("workshop name:"+ workshop1.getWorkshopName());
+        System.out.println("\n");
+        System.out.print("capacity:"+ workshop1.getCapacity());
+        System.out.println("\n");
+        System.out.println("ENTER NO 0F ATTEMPTS");
+        Scanner number = new Scanner(System.in);
+        numberOfStudents = Integer.parseInt(number.nextLine());
+        for(int i=0;i<numberOfStudents;i++) {
+            System.out.println("enter student name:");
+            Scanner input = new Scanner(System.in);
+            studentName = input.nextLine();
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
         }
+        Set<String> studentSet = new HashSet<>();
+        System.out.println(studentSet.size());
+        System.out.println(studentSet.getClass());
     }
-}
+    }
